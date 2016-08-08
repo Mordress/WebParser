@@ -41,7 +41,7 @@ public class Controller extends HttpServlet {
                 e.printStackTrace();
             }
         }
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/ajax.html");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
         dispatcher.forward(request, response);
 
     }

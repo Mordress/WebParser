@@ -2,12 +2,6 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
-<html>
-    <head>
-        <script src="js/jquery-3.1.0.js"/>
-        <title>WebParserApp</title>
-    </head>
-    <body>
         <div id="urlInput">
             <form action="Controller" method="post">
                 <label for="paste">Анализируемая страница</label>
@@ -48,6 +42,4 @@
                 <input type="submit" value="Сбросить" name="reset">
             </form>
         </div>
-    </body>
-</html>
-<script type="text/javascript" src="/js/main.js"></script>
+
