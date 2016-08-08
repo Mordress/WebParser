@@ -4,6 +4,7 @@
 
 <html>
     <head>
+        <script src="js/jquery-3.1.0.js"/>
         <title>WebParserApp</title>
     </head>
     <body>
@@ -16,7 +17,6 @@
                 <input type="submit" value="Анализировать">
             </form>
         </div>
-
         <div id="resultTable">
             <table border="1">
                 <caption>Обнаруженные ссылки</caption>
@@ -41,7 +41,6 @@
                     </c:forEach>
                 </c:if>
             </table>
-
         </div>
         <br>
         <div id="resultClear">
