@@ -26,10 +26,10 @@
                     <th>Адрес ссылки</th>
                 </tr>
                 <c:if test="${not empty parsedLinks}">
-                    <c:forEach items="${parsedLinks}" var="link" varStatus="linkCo">
+                    <c:forEach items="${parsedLinks}" var="link" varStatus="linkCounter">
                         <tr>
                             <td>
-                                ${linkCo.count}
+                                ${linkCounter.count}
                             </td>
                             <td>
                                 ${link.key}</td>
@@ -44,7 +44,9 @@
         </div>
         <br>
         <div id="resultClear">
-            <input type="button" value="Сбросить">
+            <form action="Controller" method="post">
+                <input type="button" value="Сбросить" name="reset">
+            </form>
         </div>
     </body>
 </html>

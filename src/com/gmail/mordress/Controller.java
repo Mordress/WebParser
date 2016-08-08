@@ -26,6 +26,7 @@ public class Controller extends HttpServlet {
     private void performTask(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html; charset=UTF-8");
         //PrintWriter pw = response.getWriter();
+
         Parser parser = Parser.getInstance();
         links = parser.parse(request.getParameter("urlForParse"));
 
