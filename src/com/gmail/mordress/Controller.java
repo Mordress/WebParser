@@ -26,10 +26,7 @@ public class Controller extends HttpServlet {
     private void performTask(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html; charset=UTF-8");
 
-        if (request.getParameter("reset") != null) {
-            
-        }
-        else {
+        if (request.getParameter("reset") == null) {
             Parser parser = Parser.getInstance();
             links = parser.parse(request.getParameter("urlForParse"));
 
@@ -40,7 +37,6 @@ public class Controller extends HttpServlet {
             String s = this.getServletContext().getContextPath();
             request.setAttribute("parsedLinks", links);
         }
-
         RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
         dispatcher.forward(request, response);
 
