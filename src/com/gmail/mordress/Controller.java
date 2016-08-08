@@ -25,17 +25,21 @@ public class Controller extends HttpServlet {
 
     private void performTask(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html; charset=UTF-8");
-
         if (request.getParameter("reset") == null) {
             Parser parser = Parser.getInstance();
             links = parser.parse(request.getParameter("urlForParse"));
-
             for (Map.Entry<String, String> pairs : links.entrySet()) {
                 System.out.println(pairs.getKey() + "\n\t" + pairs.getValue());
             }
-
             String s = this.getServletContext().getContextPath();
             request.setAttribute("parsedLinks", links);
+
+            /* Искусственная задержка для тестирования waiting box */
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
         RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
         dispatcher.forward(request, response);

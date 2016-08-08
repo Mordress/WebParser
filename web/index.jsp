@@ -20,6 +20,7 @@
         <div id="resultTable">
             <table border="1">
                 <caption>Обнаруженные ссылки</caption>
+                <%--<script>alert("!")</script>--%>
                 <tr>
                     <th>№ П/П</th>
                     <th>Имя ссылки</th>
@@ -50,3 +51,4 @@
         </div>
     </body>
 </html>
+<script type="text/javascript" src="/js/main.js"></script>
