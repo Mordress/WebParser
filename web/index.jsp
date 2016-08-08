@@ -45,7 +45,7 @@
         <br>
         <div id="resultClear">
             <form action="Controller" method="post">
-                <input type="button" value="Сбросить" name="reset">
+                <input type="submit" value="Сбросить" name="reset">
             </form>
         </div>
     </body>
