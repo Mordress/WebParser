@@ -1,7 +1,7 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
-<%! private int linksCounter = 0; %>
+
 <html>
     <head>
         <title>WebParserApp</title>
@@ -26,10 +26,10 @@
                     <th>Адрес ссылки</th>
                 </tr>
                 <c:if test="${not empty parsedLinks}">
-                    <c:forEach items="${parsedLinks}" var="link">
+                    <c:forEach items="${parsedLinks}" var="link" varStatus="linkCo">
                         <tr>
                             <td>
-                                <%= ++linksCounter %>
+                                ${linkCo.count}
                             </td>
                             <td>
                                 ${link.key}</td>
@@ -38,7 +38,6 @@
                             </td>
                         </tr>
                     </c:forEach>
-                    <% linksCounter = 0; %>
                 </c:if>
             </table>
 
