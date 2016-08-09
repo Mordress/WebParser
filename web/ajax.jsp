@@ -15,7 +15,7 @@
 <script type="text/javascript">
     function get_content() {
         $.ajax({
-            url: "/index.jsp",
+            url: "/i.jsp",
             type: "POST",
             success: function (data) {
                 $('#hide_img').hide();
@@ -24,7 +24,7 @@
         });
     }
     setTimeout(get_content, 1000);
-    //get_content();
+    get_content();
 </script>
 </body>
 </html>
