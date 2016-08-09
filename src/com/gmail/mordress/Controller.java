@@ -15,7 +15,6 @@ public class Controller extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
     private Map<String, String> links;
-    private RequestDispatcher dispatcher;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException {
         performTask(request, response);
@@ -37,7 +36,6 @@ public class Controller extends HttpServlet {
                 links = new TreeMap<String, String>();
                 request.setAttribute("invalidUrl", new Boolean(true));
             }
-
             /* Искусственная задержка для тестирования waiting box */
             /*
             try {
@@ -46,7 +44,7 @@ public class Controller extends HttpServlet {
                 e.printStackTrace();
             }*/
         }
-        dispatcher = request.getRequestDispatcher("/index.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
         try {
             dispatcher.forward(request, response);
         } catch (IOException e) {
