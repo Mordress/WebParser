@@ -12,7 +12,7 @@
         </div>
     </c:if>
     <body>
-        <div id="urlInput">
+        <div id="url-input">
             <form action="Controller" method="post">
                 <label for="paste">Анализируемая страница</label>
                 <input type="url" name="urlForParse" id="paste" required>
@@ -21,12 +21,11 @@
                 </div>
             </form>
         </div>
-
-        <div id="resultTable">
+        <div id="table">
             <table>
                     <caption>Обнаруженные ссылки</caption>
                 <tr>
-                    <th class="col1">№ П/П</th>
+                    <th>№ П/П</th>
                     <th>Имя ссылки</th>
                     <th>Адрес ссылки</th>
                 </tr>
@@ -45,9 +44,8 @@
                     </c:forEach>
                 </c:if>
             </table>
-
         </div>
-        <div id="resultClear">
+        <div id="reset">
             <form action="Controller" method="post">
                 <input type="submit" value="Очистить" name="reset">
             </form>
