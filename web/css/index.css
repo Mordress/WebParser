@@ -1,24 +1,45 @@
+body {
+    width: 800px;
+    margin: 50px auto;
+    background: white;
+    padding: 20px 20px 20px 20px;
+    border: 1px solid deepskyblue;
+}
+
 #errormsg {
     color: red;
 }
 
-table {
-    width: 600px;
-}
-th, td {
+table, td, th {
     border: 1px solid gray;
     text-align: left;
+}
+
+table {
+    width: 800px;
+    border-collapse: collapse;
 
 }
-td:first-child {
-    width: 10%;
+
+caption {
+    border: 1px solid gray;
+    text-align: left;
 }
+th, td {
+    height: auto;
+    padding: 5px;
+    word-wrap: break-word;
+    max-width: 400px;
+
+}
+
 input[type="url"] {
     color: black;
-    width: 600px;
+    width: 800px;
 }
 input[type="submit"] {
     width: 200px;
     color: black;
-    margin-left: 200px;
+    margin-left: 300px;
+    margin-top: 20px;
 }

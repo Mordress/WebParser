@@ -15,20 +15,18 @@
         <div id="urlInput">
             <form action="Controller" method="post">
                 <label for="paste">Анализируемая страница</label>
-                <br>
                 <input type="url" name="urlForParse" id="paste" required>
-                <br>
-                <input type="submit" value="Анализировать">
+                <div>
+                    <input type="submit" value="Анализировать">
+                </div>
             </form>
         </div>
 
         <div id="resultTable">
             <table>
+                    <caption>Обнаруженные ссылки</caption>
                 <tr>
-                    <th colspan="3">Обнаруженные ссылки</th>
-                </tr>
-                <tr>
-                    <th>№ П/П</th>
+                    <th class="col1">№ П/П</th>
                     <th>Имя ссылки</th>
                     <th>Адрес ссылки</th>
                 </tr>
@@ -49,7 +47,6 @@
             </table>
 
         </div>
-        <br>
         <div id="resultClear">
             <form action="Controller" method="post">
                 <input type="submit" value="Очистить" name="reset">
