@@ -2,6 +2,11 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
+<html>
+    <head>
+        <title>WebParserApp</title>
+    </head>
+    <body>
         <div id="urlInput">
             <form action="Controller" method="post">
                 <label for="paste">Анализируемая страница</label>
@@ -11,6 +16,7 @@
                 <input type="submit" value="Анализировать">
             </form>
         </div>
+
         <div id="resultTable">
             <table border="1">
                 <caption>Обнаруженные ссылки</caption>
@@ -35,6 +41,7 @@
                     </c:forEach>
                 </c:if>
             </table>
+
         </div>
         <br>
         <div id="resultClear">
@@ -42,4 +49,6 @@
                 <input type="submit" value="Сбросить" name="reset">
             </form>
         </div>
-
+    </body>
+</html>
+<script type="text/javascript" src="/js/main.js"></script>

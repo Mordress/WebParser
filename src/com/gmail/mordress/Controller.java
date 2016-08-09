@@ -41,7 +41,7 @@ public class Controller extends HttpServlet {
                 e.printStackTrace();
             }
         }
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/load.jsp?URL=/index.jsp");
         dispatcher.forward(request, response);
 
     }
