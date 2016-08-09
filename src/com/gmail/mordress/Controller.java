@@ -15,16 +15,17 @@ public class Controller extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
     private Map<String, String> links;
+    private RequestDispatcher dispatcher;
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException{
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException {
         performTask(request, response);
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException{
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException {
         performTask(request, response);
     }
 
-    private void performTask(HttpServletRequest request, HttpServletResponse response) throws ServletException{
+    private void performTask(HttpServletRequest request, HttpServletResponse response) throws ServletException {
         response.setContentType("text/html; charset=UTF-8");
         if (request.getParameter("reset") == null) {
             Parser parser = Parser.getInstance();
@@ -34,23 +35,22 @@ public class Controller extends HttpServlet {
 
             } catch (IOException e) {
                 links = new TreeMap<String, String>();
-                request.setAttribute("er", new Boolean(true));
+                request.setAttribute("invalidUrl", new Boolean(true));
             }
 
-
             /* Искусственная задержка для тестирования waiting box */
-            /*try {
-                Thread.sleep(2000);
+            /*
+            try {
+                Thread.sleep(3000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }*/
         }
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/ajax.jsp");
+        dispatcher = request.getRequestDispatcher("/index.jsp");
         try {
             dispatcher.forward(request, response);
         } catch (IOException e) {
-            System.out.println("Can not forward request and response");
+            System.err.println("Can not forward request and response");
         }
-
     }
 }

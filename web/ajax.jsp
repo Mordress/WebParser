@@ -8,6 +8,7 @@
     <title>Title</title>
     <script src="js/jquery-3.1.0.js"></script>
     <script type="text/javascript" src="/js/main.js"></script>
+
 </head>
 <body>
 <img src="images/loading.gif" id="hide_img">
@@ -15,16 +16,18 @@
 <script type="text/javascript">
     function get_content() {
         $.ajax({
-            url: "/i.jsp",
-            type: "POST",
+            url: "/index.jsp",
+            /*type: "POST", data: {urlForParse: $(`paste`.val())},*/
+            type: "POST", data: {parsedLinks: "<%= request.getAttribute("parsedLinks") %>"},
             success: function (data) {
                 $('#hide_img').hide();
                 $('#content').html(data);
             }
         });
     }
-    setTimeout(get_content, 1000);
+    setTimeout(get_content, 2000);
     get_content();
 </script>
+<h2>asd</h2>
 </body>
 </html>

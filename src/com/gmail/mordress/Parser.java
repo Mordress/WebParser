@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.TreeMap;
 
+/*Singltone*/
 public class Parser {
 
     private static Parser instance;
@@ -23,7 +24,7 @@ public class Parser {
         return instance;
     }
 
-    public Map<String, String> parse(String url) throws IOException{
+    public Map<String, String> parse(String url) throws IOException {
         Map<String, String> parsedLinks = new TreeMap<>();
             Document doc = Jsoup.connect(url).get();
             Elements links = doc.select("a");

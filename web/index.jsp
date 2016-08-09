@@ -1,12 +1,11 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
 <html>
     <head>
         <title>WebParserApp</title>
     </head>
-    <c:if test="${er}">
+    <c:if test="${invalidUrl}">
         <label>Введен неправильный URL</label>
     </c:if>
     <body>
@@ -23,7 +22,6 @@
         <div id="resultTable">
             <table border="1">
                 <caption>Обнаруженные ссылки</caption>
-                <%--<script>alert("!")</script>--%>
                 <tr>
                     <th>№ П/П</th>
                     <th>Имя ссылки</th>
@@ -54,4 +52,5 @@
         </div>
     </body>
 </html>
+
 <script type="text/javascript" src="/js/main.js"></script>
