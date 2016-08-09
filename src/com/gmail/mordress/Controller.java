@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Map;
+import java.util.TreeMap;
 
 @WebServlet("/Controller")
 public class Controller extends HttpServlet {
@@ -15,34 +16,41 @@ public class Controller extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private Map<String, String> links;
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException{
         performTask(request, response);
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException{
         performTask(request, response);
     }
 
-    private void performTask(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void performTask(HttpServletRequest request, HttpServletResponse response) throws ServletException{
         response.setContentType("text/html; charset=UTF-8");
         if (request.getParameter("reset") == null) {
             Parser parser = Parser.getInstance();
-            links = parser.parse(request.getParameter("urlForParse"));
-            for (Map.Entry<String, String> pairs : links.entrySet()) {
-                System.out.println(pairs.getKey() + "\n\t" + pairs.getValue());
+            try {
+                links = parser.parse(request.getParameter("urlForParse"));
+                request.setAttribute("parsedLinks", links);
+
+            } catch (IOException e) {
+                links = new TreeMap<String, String>();
+                request.setAttribute("er", new Boolean(true));
             }
-            String s = this.getServletContext().getContextPath();
-            request.setAttribute("parsedLinks", links);
+
 
             /* Искусственная задержка для тестирования waiting box */
-            try {
+            /*try {
                 Thread.sleep(2000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
-            }
+            }*/
         }
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/load.jsp?URL=/index.jsp");
-        dispatcher.forward(request, response);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/load.jsp");
+        try {
+            dispatcher.forward(request, response);
+        } catch (IOException e) {
+            System.out.println("Can not forward request and response");
+        }
 
     }
 }

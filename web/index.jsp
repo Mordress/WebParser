@@ -6,12 +6,15 @@
     <head>
         <title>WebParserApp</title>
     </head>
+    <c:if test="${er}">
+        <label>Введен неправильный URL</label>
+    </c:if>
     <body>
         <div id="urlInput">
             <form action="Controller" method="post">
                 <label for="paste">Анализируемая страница</label>
                 <br>
-                <input type="text" name="urlForParse" id="paste">
+                <input type="url" name="urlForParse" id="paste">
                 <br>
                 <input type="submit" value="Анализировать">
             </form>
