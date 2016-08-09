@@ -6,12 +6,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="js/jquery-3.1.0.js"></script>
+    <script src="../../js/jquery-3.1.0.js"></script>
     <script type="text/javascript" src="/js/main.js"></script>
 
 </head>
 <body>
-<img src="images/loading.gif" id="hide_img">
+<img src="../../images/loading.gif" id="hide_img">
 <div id="content"></div>
 <script type="text/javascript">
     function get_content() {

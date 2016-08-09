@@ -1,0 +1,24 @@
+#errormsg {
+    color: red;
+}
+
+table {
+    width: 600px;
+}
+th, td {
+    border: 1px solid gray;
+    text-align: left;
+
+}
+td:first-child {
+    width: 10%;
+}
+input[type="url"] {
+    color: black;
+    width: 600px;
+}
+input[type="submit"] {
+    width: 200px;
+    color: black;
+    margin-left: 200px;
+}

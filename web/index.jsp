@@ -4,24 +4,29 @@
 <html>
     <head>
         <title>WebParserApp</title>
+        <link rel="stylesheet" type="text/css" href="css/index.css" media="all">
     </head>
     <c:if test="${invalidUrl}">
-        <label>Введен неправильный URL</label>
+        <div id="errormsg">
+            <label>Введен неправильный URL</label>
+        </div>
     </c:if>
     <body>
         <div id="urlInput">
             <form action="Controller" method="post">
                 <label for="paste">Анализируемая страница</label>
                 <br>
-                <input type="url" name="urlForParse" id="paste">
+                <input type="url" name="urlForParse" id="paste" required>
                 <br>
                 <input type="submit" value="Анализировать">
             </form>
         </div>
 
         <div id="resultTable">
-            <table border="1">
-                <caption>Обнаруженные ссылки</caption>
+            <table>
+                <tr>
+                    <th colspan="3">Обнаруженные ссылки</th>
+                </tr>
                 <tr>
                     <th>№ П/П</th>
                     <th>Имя ссылки</th>
@@ -47,7 +52,7 @@
         <br>
         <div id="resultClear">
             <form action="Controller" method="post">
-                <input type="submit" value="Сбросить" name="reset">
+                <input type="submit" value="Очистить" name="reset">
             </form>
         </div>
     </body>

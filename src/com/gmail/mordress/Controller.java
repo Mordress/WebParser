@@ -33,6 +33,7 @@ public class Controller extends HttpServlet {
                 request.setAttribute("parsedLinks", links);
 
             } catch (IOException e) {
+                System.err.println("Can not parse URL: " + request.getParameter("urlForParse"));
                 links = new TreeMap<String, String>();
                 request.setAttribute("invalidUrl", new Boolean(true));
             }
