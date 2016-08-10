@@ -7,7 +7,7 @@
     <body>
         <div class="error-text">
             <h1>Запрашиваемая страница не найдена</h1>
-            <a href="../../index.jsp">Вернуться на главную</a>
+            <a href="javascript:history.back();">Назад</a>
         </div>
     </body>
 </html>

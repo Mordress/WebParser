@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.TreeMap;
 
-/*Singltone*/
+/* Singltone */
 public class Parser {
 
     private static Parser instance;

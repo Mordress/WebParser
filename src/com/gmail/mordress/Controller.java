@@ -26,6 +26,7 @@ public class Controller extends HttpServlet {
 
     private void performTask(HttpServletRequest request, HttpServletResponse response) throws ServletException {
         response.setContentType("text/html; charset=UTF-8");
+        /* Проверка была ли нажата кнопка "очистить" */
         if (request.getParameter("reset") == null) {
             Parser parser = Parser.getInstance();
             try {
@@ -49,7 +50,7 @@ public class Controller extends HttpServlet {
         try {
             dispatcher.forward(request, response);
         } catch (IOException e) {
-            System.err.println("Can not forward request and response");
+            System.err.println("Can not forward request and response with " + request.getParameter("urlForParse"));
         }
     }
 }

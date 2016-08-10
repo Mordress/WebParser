@@ -18,25 +18,25 @@ table, td, th {
 table {
     width: 800px;
     border-collapse: collapse;
-
 }
 
 caption {
     border: 1px solid gray;
     text-align: left;
 }
+
 th, td {
     height: auto;
     padding: 5px;
     word-wrap: break-word;
     max-width: 400px;
-
 }
 
 input[type="url"] {
     color: black;
     width: 800px;
 }
+
 input[type="submit"] {
     width: 200px;
     color: black;
